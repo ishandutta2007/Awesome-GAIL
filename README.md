@@ -77,3 +77,14 @@ Safety-critical applications require agents to explore safely and remain robust 
 | :--- | :---: | :--- | :--- |
 | [**Safe-GAIL**](docs/safe-gail.md) | 2020 | [Link](https://www.researchgate.net/publication/341545454_Safe_Generative_Adversarial_Imitation_Learning) | Constrains policy generation using Cost Functions or Control Barrier Functions to ensure safety during exploration. |
 | [**Robust GAIL**](docs/robust-gail.md) | 2019 | [arXiv:1905.04418](https://arxiv.org/abs/1905.04418) | Models bounded noise or expert sub-optimality to prevent mimicking bad habits and ensure robustness. |
+
+##  Star History
+<div align="center">
+<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-GAIL&type=date&legend=bottom-right">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-GAIL&type=date&theme=dark&legend=bottom-right" />
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-GAIL&type=date&legend=bottom-right" />
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-GAIL&type=date&legend=bottom-right" />
+</picture>
+</a>
+</div>
