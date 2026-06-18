@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" rx="15" fill="url(#bg-grad)" />
+
+  <!-- Decorative Grid Pattern -->
+  <g opacity="0.05">
+    <path d="M 0,50 L 1200,50 M 0,100 L 1200,100 M 0,150 L 1200,150 M 0,200 L 1200,200 M 0,250 L 1200,250 M 0,300 L 1200,300 M 0,350 L 1200,350" stroke="#ffffff" stroke-width="1" />
+    <path d="M 100,0 L 100,400 M 200,0 L 200,400 M 300,0 L 300,400 M 400,0 L 400,400 M 500,0 L 500,400 M 600,0 L 600,400 M 700,0 L 700,400 M 800,0 L 800,400 M 900,0 L 900,400 M 1000,0 L 1000,400 M 1100,0 L 1100,400" stroke="#ffffff" stroke-width="1" />
+  </g>
+
+  <!-- Graphic Elements (Neural Nets & Feedback Loops) -->
+  <g transform="translate(800, 200)">
+    <!-- Glow backdrops -->
+    <circle cx="-120" cy="0" r="45" fill="#8b5cf6" opacity="0.15" filter="url(#glow-purple)" />
+    <circle cx="120" cy="0" r="45" fill="#06b6d4" opacity="0.15" filter="url(#glow-cyan)" />
+
+    <!-- Connecting Loops (Adversarial Process) -->
+    <!-- Top curve: Generator to Discriminator -->
+    <path d="M -75,-20 C -25,-70 25,-70 75,-20" fill="none" stroke="url(#accent-purple)" stroke-width="4" stroke-dasharray="8 4" />
+    <polygon points="78,-15 70,-26 77,-21" fill="#ec4899" />
+
+    <!-- Bottom curve: Discriminator to Generator (Reward Signal) -->
+    <path d="M 75,20 C 25,70 -25,70 -75,20" fill="none" stroke="url(#accent-cyan)" stroke-width="4" />
+    <polygon points="-78,15 -70,26 -77,21" fill="#06b6d4" />
+
+    <!-- Generator Node -->
+    <circle cx="-120" cy="0" r="40" fill="#1e1b4b" stroke="url(#accent-purple)" stroke-width="3" />
+    <text x="-120" y="8" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">G</text>
+    <text x="-120" y="65" font-family="'Inter', system-ui, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle" font-weight="bold">GENERATOR (POLICY)</text>
+
+    <!-- Discriminator Node -->
+    <circle cx="120" cy="0" r="40" fill="#061f2d" stroke="url(#accent-cyan)" stroke-width="3" />
+    <text x="120" y="8" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">D</text>
+    <text x="120" y="65" font-family="'Inter', system-ui, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle" font-weight="bold">DISCRIMINATOR</text>
+
+    <!-- Expert Data Input -->
+    <path d="M 120,-110 L 120,-43" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="4 4" />
+    <polygon points="120,-40 116,-48 124,-48" fill="#9ca3af" />
+    <text x="120" y="-120" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle" font-weight="bold" letter-spacing="1">EXPERT DEMOS</text>
+
+    <!-- Interactive Arrows Text -->
+    <rect x="-40" y="-85" width="80" height="24" rx="12" fill="#1f2937" stroke="#374151" stroke-width="1" />
+    <text x="0" y="-69" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#ec4899" text-anchor="middle" font-weight="bold">Actions</text>
+
+    <rect x="-50" y="60" width="100" height="24" rx="12" fill="#1f2937" stroke="#374151" stroke-width="1" />
+    <text x="0" y="76" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#06b6d4" text-anchor="middle" font-weight="bold">Learned Reward</text>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(80, 0)">
+    <!-- Title -->
+    <text x="0" y="170" font-family="'Outfit', 'Inter', system-ui, sans-serif" font-size="54" font-weight="900" fill="#ffffff" letter-spacing="-1">
+      Awesome GAIL
+    </text>
+    
+    <!-- Styled Line -->
+    <rect x="0" y="195" width="380" height="4" rx="2" fill="url(#accent-purple)" />
+
+    <!-- Subtitle -->
+    <text x="0" y="240" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="500" fill="#9ca3af" letter-spacing="1">
+      Generative Adversarial Imitation Learning
+    </text>
+    <text x="0" y="268" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="400" fill="#6b7280" letter-spacing="0.5">
+      A curated collection of advanced variants, papers, and structures.
+    </text>
+  </g>
+</svg>
