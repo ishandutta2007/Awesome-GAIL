@@ -11,15 +11,22 @@ Generative Adversarial Imitation Learning (GAIL) bypasses traditional Inverse Re
 
 ## 2. Sample-Efficiency & Stability Variants
 Standard GAIL suffers from high sample complexity and training instability. These variants optimize data usage and reward signals:
-* **SAM-GAIL (Sample-Efficient GAIL):** Integrates off-policy Reinforcement Learning (like SAC or TD3) to reuse past transition data, drastically reducing the number of environment interactions needed.
-* **InfoGAIL:** Incorporates Information Maximization to learn interpretable, latent sub-skills from unlabelled, heterogeneous expert demonstrations.
-* **DAC (Discriminator-Actor-Critic):** Addresses the "surrogate reward bias" by treating the discriminator as a dynamic reward function inside an actor-critic framework, fixing off-policy training bugs.
+
+| Variant | Year | Paper Link | Description |
+| :--- | :---: | :--- | :--- |
+| **SAM-GAIL** | 2019 | [arXiv:1809.02064](https://arxiv.org/abs/1809.02064) | Integrates off-policy RL (like SAC or TD3) to reuse past transition data, reducing environment interactions. |
+| **InfoGAIL** | 2017 | [arXiv:1703.08840](https://arxiv.org/abs/1703.08840) | Uses Information Maximization to learn interpretable, latent sub-skills from heterogeneous demonstrations. |
+| **DAC** | 2018 | [arXiv:1809.02925](https://arxiv.org/abs/1809.02925) | Addresses "surrogate reward bias" by treating the discriminator as a dynamic reward function in an actor-critic framework. |
 
 ## 3. Partially Observable & Multi-Agent Adaptations
-* **PO-GAIL (Partially Observable GAIL):** Modifies the discriminator to handle environments where the agent cannot see the full state vector, relying only on historical observation sequences.
-* **MAGAIL (Multi-Agent GAIL):** Extends the adversarial framework to cooperative or competitive multi-agent environments, training decentralized policies from multi-agent coordinate demonstrations.
-* **Third-Person GAIL:** Corrects for domain shifts, allowing an agent to learn a policy even if the expert demonstrations are recorded from a different camera angle or perspective.
+| Variant | Year | Paper Link | Description |
+| :--- | :---: | :--- | :--- |
+| **PO-GAIL** | 2020 | [arXiv:2011.04642](https://arxiv.org/abs/2011.04642) | Modifies the discriminator to handle partially observable environments using historical observation sequences. |
+| **MAGAIL** | 2018 | [arXiv:1807.09936](https://arxiv.org/abs/1807.09936) | Extends GAIL to multi-agent environments, training decentralized policies from coordinate demonstrations. |
+| **Third-Person GAIL** | 2017 | [arXiv:1703.01703](https://arxiv.org/abs/1703.01703) | Corrects for domain shifts, allowing learning from expert demonstrations recorded from different perspectives. |
 
 ## 4. Safety & Robustness Variants
-* **Safe-GAIL:** Constraints the policy generation step using Cost Functions or Control Barrier Functions to ensure the agent does not violate safety parameters during the adversarial exploration phase.
-* **Robust GAIL:** Models bounded noise or expert sub-optimality, preventing the student policy from mimicking bad habits or failing when faced with environmental perturbations.
+| Variant | Year | Paper Link | Description |
+| :--- | :---: | :--- | :--- |
+| **Safe-GAIL** | 2020 | [Link](https://www.researchgate.net/publication/341545454_Safe_Generative_Adversarial_Imitation_Learning) | Constrains policy generation using Cost Functions or Control Barrier Functions to ensure safety during exploration. |
+| **Robust GAIL** | 2019 | [arXiv:1905.04418](https://arxiv.org/abs/1905.04418) | Models bounded noise or expert sub-optimality to prevent mimicking bad habits and ensure robustness. |
